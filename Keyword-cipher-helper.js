@@ -33,3 +33,16 @@ function KeywordCipher(abc, keyword) {
 }
 
 // or
+
+function KeywordCipher(abc, keyword) {
+  let cba = (keyword + abc).split('').reduce( function(s, ch){ return ~s.indexOf(ch) ? s : s + ch });
+  
+  let tr = function(from, to) {
+    return function(str) {
+      return str.replace(/./g, function(ch){ return to[from.indexOf(ch)] || ch })
+    }
+  }
+
+  this.encode = tr(abc, cba)
+  this.decode = tr(cba, abc)
+}
