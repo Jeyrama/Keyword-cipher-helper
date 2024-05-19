@@ -31,3 +31,5 @@ function KeywordCipher(abc, keyword) {
   this.encode = code.bind(this, key, abc);
   this.decode = code.bind(this, abc, key);
 }
+
+// or
