@@ -21,3 +21,6 @@ Only the first occurence of a letter in a keyword should be used.
 Any characters not provided in the alphabet should 
 be left in situ when encoding or decoding.
 */
+
+
+// Solution
