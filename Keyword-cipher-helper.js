@@ -24,3 +24,10 @@ be left in situ when encoding or decoding.
 
 
 // Solution
+
+function KeywordCipher(abc, keyword) {
+  let key = (keyword + abc).split('').filter(function(l,i,a) { return a.indexOf(l) == i });
+  function code(k1, k2, s) { return s.split('').map(function(l){  return k1[k2.indexOf(l)] || l }).join('') };
+  this.encode = code.bind(this, key, abc);
+  this.decode = code.bind(this, abc, key);
+}
